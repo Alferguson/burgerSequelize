@@ -1,0 +1,44 @@
+.inNOutRed {
+	color: #C6001D;
+}
+.inNOutYellow {
+	color: black;
+	font-size: 200%;
+	-webkit-text-fill-color: #FFEF00; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #C6001D;
+}
+.smallerButton {
+	height: 40%;
+	width: 10%;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+img {
+	width: 40%;
+}
+.container, .container-fluid, .create-burger {
+	padding-bottom: 20px;
+}
+.container {
+    position: relative;
+    text-align: center;
+}
+li {
+  	padding: 5px;
+  	margin: 5px;
+}
+
+.label {
+  	font-weight: bold;
+}
+
+.create-update-form {
+  	padding: 5px;
+  	margin: 5px;
+  	background: aqua;
+}
+
+.form-group {
+  	margin-bottom: 5px;
+}
