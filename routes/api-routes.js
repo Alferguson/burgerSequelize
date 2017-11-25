@@ -1,11 +1,8 @@
-var db = require("../models/burgerCode.js");
+var db = require("../models");
 
 module.exports = function(app) {
 	app.get("/", function(req, res) {
-		var query ={};
-		db.Burger.findAll({
-			where: query
-		}).then(function(results) {
+		db.Burger.findAll({}).then(function(results) {
 			res.json(results);
 		});
 	});
