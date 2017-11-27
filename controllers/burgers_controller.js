@@ -1,13 +1,14 @@
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger.js");
+var burger = require("../models/burgerCode.js");
 
 var db = require("../models");
 
-module.exports = function(router) {
+// module.exports = function(router) {
 	router.get("/", function(req, res) {
 		db.Burger.findAll({}).then(function(results) {
-			res.json(results);
+			console.log(results);
+			// res.json(results);
 			res.render("index", results);
 		});
 	});
@@ -16,7 +17,11 @@ module.exports = function(router) {
 		db.Burger.create({
 			burger_name: req.body.burger_name
 		}).then(function(results) {
-			res.json(results);
+		    res.json({ id: results.insertId });
+		    console.log("a burg has been added");			
+			// res.json(results);
+						// res.render("index", results);
+
 		})
 	});
 
@@ -28,12 +33,15 @@ module.exports = function(router) {
 				id: req.body.id
 			}
 		}).then(function(results) {
-			res.json(results);
+			// res.json(results);
+						res.render("index", results);
+
 		});
 	});
-};	
+// };	
 
 
+module.exports = router;
 
 
 

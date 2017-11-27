@@ -14,6 +14,7 @@ $(function() {
         })
         .then (
             function() {
+                console.log("burger in database");
                 location.reload();
             }
         );
