@@ -7,7 +7,10 @@ var db = require("../models");
 // module.exports = function(router) {
 	router.get("/", function(req, res) {
 		db.Burger.findAll({}).then(function(results) {
-			console.log(results);
+			// console.log(results);
+			// console.log(db);
+			
+			// console.log(db.Burger[0]);
 			// res.json(results);
 			res.render("index", results);
 		});
