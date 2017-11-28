@@ -19,8 +19,12 @@
         <ul class="inNOutYellow">
             {{#each burgers}}
                 {{#if devoured}}
-                    {{> burgers/burgers-block devoured=true}}
-                {{/if}}    
+                    <li>
+                        <div data-id="{{id}}" data-devour="{{devoured}}">
+                            {{burger_name}}
+                        </div>
+                    </li> 
+                {{/if}}
             {{/each}}
         </ul>
     </div>

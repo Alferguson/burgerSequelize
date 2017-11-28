@@ -6,13 +6,9 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
     db.Burger.findAll({}).then(function(results) {
-        // console.log(results);
-        // console.log(db);
         var hbsObject = {
         	burgers: results
         };
-        // console.log(db.Burger[0]);
-        // res.json(results);
         res.render("index", hbsObject);
     });
 });
@@ -23,9 +19,6 @@ router.post("/api/burgers", function(req, res) {
     }).then(function(results) {
         res.json({ id: results.insertId });
         console.log("a burg has been added");
-        // res.json(results);
-        // res.render("index", results);
-
     })
 });
 
@@ -37,8 +30,8 @@ router.put("/api/burgers/:id", function(req, res) {
             id: req.params.id
         }
     }).then(function(results) {
-        // res.json(results);
-        res.render("index", results);
+        res.json(results);
+        // res.render("index", results);
 
     }).catch(function(err) {
     	res.json(err);

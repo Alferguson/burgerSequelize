@@ -1,9 +1,4 @@
 <li>
-	{{#if devoured}}
-		<div data-id="{{id}}" data-devour="{{devoured}}">
-			{{burger_name}}
-		</div>
-	{{/if}}
 	{{#unless devoured}}
 		{{burger_name}}
 		<button class="if-eaten" data-id="{{id}}" data-devour="{{devoured}}">
