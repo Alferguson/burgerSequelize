@@ -31,14 +31,17 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
     db.Burger.update ({
-        devoured: true,
+        devoured: true
+    	}, {    
         where: {
-            id: req.body.id
+            id: req.params.id
         }
     }).then(function(results) {
         // res.json(results);
         res.render("index", results);
 
+    }).catch(function(err) {
+    	res.json(err);
     });
 });
 
